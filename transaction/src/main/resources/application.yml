@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql:///mydb
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/**/*.xml
+  type-aliases-package: com.zc.transaction
