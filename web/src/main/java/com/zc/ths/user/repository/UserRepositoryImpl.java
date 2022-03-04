@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
-    private static final String NAMESPACE = "com.zc.ths.user.repository.UserMapper";
+    private static final String NAMESPACE = "com.zc.ths.user.repository.UserRepositoryImpl";
 
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
@@ -19,6 +19,11 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public List<User> getUserList(UserParam userParam) {
         return sqlSessionTemplate.selectList(NAMESPACE + ".getUserList", userParam);
+    }
+
+    @Override
+    public void insert(User user) {
+        sqlSessionTemplate.insert(NAMESPACE + ".insert", user);
     }
 
 }

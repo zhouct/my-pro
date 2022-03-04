@@ -9,4 +9,6 @@ public interface UserService {
 
     List<User> getUserList(UserParam userParam);
 
+    void insert(User user);
+
 }

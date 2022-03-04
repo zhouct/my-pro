@@ -26,8 +26,8 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:spring/application-context.xml")
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration("classpath:spring/application-context.xml")
 public class RedisClientTest {
 
     @Autowired

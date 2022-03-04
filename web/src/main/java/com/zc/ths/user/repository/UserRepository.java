@@ -9,4 +9,6 @@ public interface UserRepository {
 
     List<User> getUserList(UserParam userParam);
 
+    void insert(User user);
+
 }

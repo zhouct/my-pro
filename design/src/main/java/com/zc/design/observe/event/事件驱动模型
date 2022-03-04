@@ -1,0 +1,32 @@
+使用观察者模式实现事件驱动模型
+
+基础框架
+1、事件对象EventObject
+    封装事件相关的数据，比如订单回调事件中订单相关数据，
+2、接口Event
+    提供绑定和获取事件对象的方法，getEventObject()与setEventObject(EventObject eventObject);
+
+3、Event实现类AbstractEvent
+    可提供最基本的默认实现方法，或者仍使用抽象方法
+
+4、事件监听接口EventListener
+    提供监听事件处触发方法，onEvent(Event event);
+
+5、EventListener默认实现类AbstractEventListener
+    可提供默认实现方法，扩展其他功能，如listener优先级
+
+6、事件广播器EventMultiCaster
+    List<EventListener>   用来存储当前事件的监听器实例
+    registerListener()    向广播器添加监听器
+    removeListener()      删除广播器中的监听器
+    caster()              向List<EventListener>中所有的监听器广播事件，调用各自onEvent(Event event)方法
+
+具体业务实现-订单支付完成回调事件
+1、订单回调事件OrderCallBackEvent
+    继承AbstractEvent，传入订单相关EventObject
+2、多个订单回调监听器，均继承AbstractEventListener
+    1）订单状态变更
+    2）库存扣减
+    3）用户积分增加
+    ...
+    在onEvent中各自实现具体业务逻辑

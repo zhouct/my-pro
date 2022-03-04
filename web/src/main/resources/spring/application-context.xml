@@ -11,9 +11,9 @@
         <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
     </context:component-scan>
 
-    <import resource="classpath:spring/application-redis.xml"/>
-    <import resource="classpath:spring/application-activiti.xml"/>
-    <import resource="classpath:spring/application-mybatis.xml"/>
+<!--    <import resource="classpath:spring/application-redis.xml"/>-->
+<!--    <import resource="classpath:spring/application-activiti.xml"/>-->
+    <import resource="application-mybatis.xml"/>
 
     <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
         <property name="driverClassName" value="${jdbc.driver}" />
